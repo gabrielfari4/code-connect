@@ -58,6 +58,25 @@
             </>
         )
 
+        const Texto = ({classe, children}) => (
+            <p className={classe}>{children}</p>
+        )
+
+        const ItemRedesSociais = ({link, nome}) => (
+            <li>
+                <a href="{link}">
+                    <img src={`./img/${nome}.svg`} alt={`Ícone do ${nome}`} />
+                    {nome}    
+                </a>    
+            </li>
+        )
+
+        const Link = ({children}) => (
+            <a href="#" className='container-links__link'>
+                {children}    
+            </a>
+        )
+
         function PaginaDeLogin() {
             const [email, setEmail] = React.useState('');
             const [senha, setSenha] = React.useState('');
@@ -92,7 +111,16 @@
                                 </p>
                             </fieldset>
                             <Botao >Login</Botao>
-                        </form>    
+                        </form>
+                        <div className='container-links'>
+                            <Texto classe='container-links__titulo'>ou entre com outras contas</Texto>
+                            <ul>
+                                <ItemRedesSociais link='https://www.github.com' nome='GitHub' />
+                                <ItemRedesSociais link='https://www.google.com' nome='Google' />
+                            </ul>
+                            <Texto classe='container-links__texto'>Ainda não tem conta?</Texto>
+                            <Link>Crie seu cadastro</Link>
+                        </div>    
                     </section>
                 </div>
             )

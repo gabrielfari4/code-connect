@@ -48,6 +48,16 @@
             className='form__botao'>{children}</button>
         )
 
+        const Checkbox = () => (
+            <>
+                <div className='form__campo-checkbox'>
+                    <input type="checkbox" id='lembrar' />
+                    <label for="lembrar" />    
+                </div>
+                <p className='form__opcoes-texto'>Lembrar-me</p>
+            </>
+        )
+
         function PaginaDeLogin() {
             const [email, setEmail] = React.useState('');
             const [senha, setSenha] = React.useState('');
@@ -75,6 +85,12 @@
                             placeholder='Digite sua senha' 
                             value={senha}
                             setValor={setSenha} />
+                            <fieldset className='form__opcoes'>
+                                <Checkbox />
+                                <p>
+                                    <a href="#" aria-label='Recuperar senha esquecida'>Esqueci a senha</a>    
+                                </p>
+                            </fieldset>
                             <Botao >Login</Botao>
                         </form>    
                     </section>

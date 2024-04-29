@@ -31,7 +31,22 @@
             <h2 className='form__texto'>Boas-vindas! Faça seu login.</h2>
         )
 
-        ReactDOM.createRoot(document.getElementById('root')).render(<Subtitulo />)
+        function PaginaDeLogin() {
+            return (
+                <div className='container-login'>
+                    <img src="./img/imagem-login.png" alt="Mulher negra de cabelos crespos usando óculos e mexendo no computador" />
+                    <section>
+                        <form>
+                            <Titulo />
+                            <Subtitulo />
+                            
+                        </form>    
+                    </section>
+                </div>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<PaginaDeLogin />)
     </script>
 </body>
 

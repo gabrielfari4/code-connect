@@ -37,7 +37,9 @@
                 <input type={props.tipo} 
                 placeholder={props.placeholder} 
                 required 
-                id={props.tipo} />
+                id={props.tipo}
+                value={props.value} 
+                onChange={e => props.setValor(e.target.value)} />
             </div>
         )
 
@@ -47,6 +49,9 @@
         )
 
         function PaginaDeLogin() {
+            const [email, setEmail] = React.useState('');
+            const [senha, setSenha] = React.useState('');
+            
             return (
                 <div className='container-login'>
                     <img src="./img/imagem-login.png" alt="Mulher negra de cabelos crespos usando óculos e mexendo no computador" />
@@ -56,10 +61,14 @@
                             <Subtitulo>Boas-vindas! Faça seu login</Subtitulo>
                             <CampoDeDigitacao label='E-mail ou usuário'
                             tipo='email'
-                            placeholder='Digite seu e-mail ou usuário' />
+                            placeholder='Digite seu e-mail ou usuário' 
+                            value={email} 
+                            setValor={setEmail}/>
                             <CampoDeDigitacao label='Senha'
                             tipo='password'
-                            placeholder='Digite sua senha' />
+                            placeholder='Digite sua senha' 
+                            value={senha}
+                            setValor={setSenha} />
                             <Botao>Login</Botao>
                         </form>    
                     </section>
